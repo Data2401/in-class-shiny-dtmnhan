@@ -34,4 +34,18 @@ Then, all we need to do is to use the function `ggplotly()`!
 library(plotly)
 
 ggplotly(p)
+
+p_animated <- ggplot(penguins, aes(
+  x = bill_length_mm,
+  y = bill_depth_mm,
+  color = species,
+  frame = island)) +
+  geom_point(size = 2, alpha = 0.7) +
+  labs(
+    title = "Animated Penguin Plot by Island",
+    x = "Bill Length (mm)",
+    y = "Bill Depth (mm)"
+  )
+
+ggplotly(p_animated)
 ```
